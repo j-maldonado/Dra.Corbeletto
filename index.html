@@ -886,8 +886,13 @@
       }
 
       .testimonial-track {
-        gap: 0;
-      }
+      display: flex;
+      flex-wrap: nowrap;
+      gap: 18px;
+      width: max-content;
+      will-change: transform;
+      transform: translate3d(0, 0, 0);
+    }
 
       .testimonial-viewport {
         border-radius: 24px;
@@ -994,9 +999,7 @@
       animation: testimonial-marquee 42s linear infinite;
     }
 
-    .testimonial-slider:hover .testimonial-track {
-      animation-play-state: paused;
-    }
+    
 
     .testimonial-card {
       flex: 0 0 360px;
@@ -1042,21 +1045,7 @@
       display: none !important;
     }
 
-    @keyframes testimonial-marquee {
-      from {
-        transform: translateX(0);
-      }
-
-      to {
-        transform: translateX(calc(-50% - 9px));
-      }
-    }
-
     @media (max-width: 920px) {
-      .testimonial-track {
-        animation-duration: 34s;
-      }
-
       .testimonial-card {
         flex: 0 0 320px;
         width: 320px;
@@ -1073,7 +1062,6 @@
 
       .testimonial-track {
         gap: 14px;
-        animation-duration: 30s;
       }
 
       .testimonial-card {
@@ -1091,7 +1079,657 @@
         letter-spacing: 0.12em;
       }
     }
-  </style>
+  
+    /* === Premium refinement layer === */
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      background:
+        radial-gradient(circle at 14% 10%, rgba(185, 127, 122, 0.08), transparent 18%),
+        radial-gradient(circle at 86% 18%, rgba(234, 214, 210, 0.20), transparent 20%),
+        radial-gradient(circle at 50% 100%, rgba(244, 232, 229, 0.24), transparent 24%);
+      z-index: -1;
+    }
+
+    .site-header {
+      transition: background 0.32s ease, border-color 0.32s ease, box-shadow 0.32s ease;
+    }
+
+    .site-header.is-scrolled {
+      background: rgba(252, 247, 246, 0.88);
+      border-bottom-color: rgba(146, 108, 104, 0.14);
+      box-shadow: 0 12px 30px rgba(103, 73, 69, 0.08);
+    }
+
+    .hero {
+      position: relative;
+      overflow: clip;
+    }
+
+    .hero::before,
+    .hero::after {
+      content: "";
+      position: absolute;
+      border-radius: 999px;
+      pointer-events: none;
+      opacity: 0.58;
+      filter: blur(12px);
+      animation: ambientFloat 11s ease-in-out infinite;
+    }
+
+    .hero::before {
+      width: 260px;
+      height: 260px;
+      top: 36px;
+      right: -90px;
+      background: radial-gradient(circle, rgba(234,214,210,0.52) 0%, rgba(234,214,210,0.06) 62%, transparent 76%);
+    }
+
+    .hero::after {
+      width: 180px;
+      height: 180px;
+      left: -36px;
+      bottom: 8px;
+      animation-delay: -4s;
+      background: radial-gradient(circle, rgba(185,127,122,0.12) 0%, rgba(185,127,122,0.04) 62%, transparent 76%);
+    }
+
+    @keyframes ambientFloat {
+      0%, 100% { transform: translate3d(0,0,0); }
+      50% { transform: translate3d(8px,-12px,0); }
+    }
+
+    .section-head {
+      position: relative;
+    }
+
+    .section-head::after {
+      content: "";
+      display: block;
+      width: 64px;
+      height: 2px;
+      margin-top: 18px;
+      border-radius: 999px;
+      background: linear-gradient(90deg, rgba(185,127,122,0.84), rgba(185,127,122,0.12));
+    }
+
+    .hero-card,
+    .about-image,
+    .glass-card,
+    .feature-card,
+    .step,
+    .faq-item,
+    .social-profile,
+    .social-post,
+    .testimonial-card,
+    .contact-card {
+      transition: transform 0.34s ease, box-shadow 0.34s ease, border-color 0.34s ease, background 0.34s ease;
+    }
+
+    .feature-card:hover,
+    .step:hover,
+    .faq-item:hover,
+    .social-post:hover,
+    .testimonial-card:hover,
+    .contact-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 24px 54px rgba(103, 73, 69, 0.16);
+      border-color: rgba(185, 127, 122, 0.22);
+    }
+
+    .hero-card:hover,
+    .about-image:hover,
+    .glass-card:hover,
+    .social-profile:hover {
+      box-shadow: 0 26px 58px rgba(103, 73, 69, 0.15);
+      border-color: rgba(185, 127, 122, 0.18);
+    }
+
+    .btn {
+      position: relative;
+      overflow: hidden;
+      transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease, background 0.25s ease;
+    }
+
+    .btn::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(120deg, transparent 0%, rgba(255,255,255,0.08) 42%, transparent 72%);
+      transform: translateX(-120%);
+      transition: transform 0.58s ease;
+    }
+
+    .btn:hover::after {
+      transform: translateX(120%);
+    }
+
+    .btn-primary:hover {
+      box-shadow: 0 18px 38px rgba(155, 103, 99, 0.34);
+    }
+
+    .btn-secondary:hover {
+      border-color: rgba(185, 127, 122, 0.24);
+      box-shadow: 0 14px 26px rgba(103, 73, 69, 0.10);
+    }
+
+    .pill,
+    .social-chip,
+    .eyebrow,
+    .social-post-tag {
+      transition: transform 0.25s ease, border-color 0.25s ease, background 0.25s ease;
+    }
+
+    .pill:hover,
+    .social-chip:hover {
+      transform: translateY(-2px);
+      background: rgba(255,255,255,0.88);
+      border-color: rgba(185, 127, 122, 0.24);
+    }
+
+    .js-ready .reveal-up {
+      opacity: 0;
+      transform: translateY(22px);
+      transition: opacity 0.72s ease, transform 0.72s ease;
+      will-change: opacity, transform;
+    }
+
+    .js-ready .reveal-up.is-visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .js-ready .delay-1 { transition-delay: 0.08s; }
+    .js-ready .delay-2 { transition-delay: 0.16s; }
+    .js-ready .delay-3 { transition-delay: 0.24s; }
+    .js-ready .delay-4 { transition-delay: 0.32s; }
+
+    @media (prefers-reduced-motion: reduce) {
+      .hero::before,
+      .hero::after {
+        animation: none !important;
+      }
+
+      .js-ready .reveal-up,
+      .js-ready .reveal-up.is-visible {
+        opacity: 1 !important;
+        transform: none !important;
+        transition: none !important;
+      }
+    }
+
+
+    /* === QR WhatsApp === */
+    .qr-card {
+      display: grid;
+      grid-template-columns: 132px 1fr;
+      gap: 18px;
+      align-items: center;
+      padding: 18px;
+      border-radius: 24px;
+      border: 1px solid rgba(255, 255, 255, 0.8);
+      background: rgba(255, 255, 255, 0.78);
+      backdrop-filter: blur(12px);
+      box-shadow: var(--shadow);
+      margin-top: 18px;
+    }
+
+    .qr-card img {
+      width: 132px;
+      height: 132px;
+      object-fit: contain;
+      border-radius: 18px;
+      background: #fff;
+      padding: 8px;
+      border: 1px solid var(--line);
+    }
+
+    .qr-copy h3 {
+      margin: 0 0 8px;
+    }
+
+    .qr-copy p {
+      margin: 0 0 12px;
+      color: var(--muted);
+    }
+
+    .qr-note {
+      font-size: 0.9rem;
+      color: var(--muted);
+    }
+
+    @media (max-width: 760px) {
+      .qr-card {
+        grid-template-columns: 1fr;
+        text-align: center;
+      }
+
+      .qr-card img {
+        margin: 0 auto;
+      }
+    }
+
+
+    /* === QR compacto en contacto === */
+    .contact-cta-side {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 14px;
+}
+
+    .contact-qr-inline {
+      width: 118px;
+      height: 118px;
+      object-fit: contain;
+      border-radius: 16px;
+      background: #fff;
+      padding: 6px;
+      border: 1px solid var(--line);
+      box-shadow: 0 10px 24px rgba(103, 73, 69, 0.10);
+      flex-shrink: 0;
+    }
+
+    .contact-qr-meta {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+      min-width: 0;
+    }
+
+    .contact-qr-meta small {
+      color: var(--muted);
+      font-size: 0.84rem;
+      line-height: 1.35;
+      max-width: 260px;
+    }
+
+    @media (max-width: 1080px) {
+      .contact-cta-side {
+        justify-content: flex-start;
+      }
+    }
+
+    @media (max-width: 760px) {
+      .contact-cta-side {
+        width: 100%;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 12px;
+      }
+
+      .contact-qr-inline {
+        width: 170px;
+        height: 170px;
+        margin: 0 auto;
+      }
+
+      .contact-qr-meta {
+        text-align: center;
+        align-items: center;
+      }
+
+      .contact-qr-meta small {
+        max-width: 100%;
+      }
+    }
+
+</style>
+
+  <style id="testimonial-js-marquee-style">
+    .testimonial-section .testimonial-viewport {
+      overflow: hidden;
+      border-radius: 28px;
+      mask-image: linear-gradient(to right, transparent 0, black 6%, black 94%, transparent 100%);
+      -webkit-mask-image: linear-gradient(to right, transparent 0, black 6%, black 94%, transparent 100%);
+    }
+
+    .testimonial-section .testimonial-track {
+      display: flex;
+      flex-wrap: nowrap;
+      align-items: stretch;
+      gap: 18px;
+      width: max-content;
+      will-change: transform;
+      transform: translate3d(0,0,0);
+    }
+
+    .testimonial-section .testimonial-card {
+      flex: 0 0 360px;
+      width: 360px;
+      min-width: 360px;
+      max-width: 360px;
+    }
+
+    @media (max-width: 920px) {
+      .testimonial-section .testimonial-card {
+        flex: 0 0 320px;
+        width: 320px;
+        min-width: 320px;
+        max-width: 320px;
+      }
+    }
+
+    @media (max-width: 760px) {
+      .testimonial-section .testimonial-viewport {
+        border-radius: 24px;
+        mask-image: none;
+        -webkit-mask-image: none;
+      }
+
+      .testimonial-section .testimonial-track {
+        gap: 14px;
+      }
+
+      .testimonial-section .testimonial-card {
+        flex: 0 0 86vw;
+        width: 86vw;
+        min-width: 86vw;
+        max-width: 86vw;
+      }
+    }
+  
+    /* === Premium refinement layer === */
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      background:
+        radial-gradient(circle at 14% 10%, rgba(185, 127, 122, 0.08), transparent 18%),
+        radial-gradient(circle at 86% 18%, rgba(234, 214, 210, 0.20), transparent 20%),
+        radial-gradient(circle at 50% 100%, rgba(244, 232, 229, 0.24), transparent 24%);
+      z-index: -1;
+    }
+
+    .site-header {
+      transition: background 0.32s ease, border-color 0.32s ease, box-shadow 0.32s ease;
+    }
+
+    .site-header.is-scrolled {
+      background: rgba(252, 247, 246, 0.88);
+      border-bottom-color: rgba(146, 108, 104, 0.14);
+      box-shadow: 0 12px 30px rgba(103, 73, 69, 0.08);
+    }
+
+    .hero {
+      position: relative;
+      overflow: clip;
+    }
+
+    .hero::before,
+    .hero::after {
+      content: "";
+      position: absolute;
+      border-radius: 999px;
+      pointer-events: none;
+      opacity: 0.58;
+      filter: blur(12px);
+      animation: ambientFloat 11s ease-in-out infinite;
+    }
+
+    .hero::before {
+      width: 260px;
+      height: 260px;
+      top: 36px;
+      right: -90px;
+      background: radial-gradient(circle, rgba(234,214,210,0.52) 0%, rgba(234,214,210,0.06) 62%, transparent 76%);
+    }
+
+    .hero::after {
+      width: 180px;
+      height: 180px;
+      left: -36px;
+      bottom: 8px;
+      animation-delay: -4s;
+      background: radial-gradient(circle, rgba(185,127,122,0.12) 0%, rgba(185,127,122,0.04) 62%, transparent 76%);
+    }
+
+    @keyframes ambientFloat {
+      0%, 100% { transform: translate3d(0,0,0); }
+      50% { transform: translate3d(8px,-12px,0); }
+    }
+
+    .section-head {
+      position: relative;
+    }
+
+    .section-head::after {
+      content: "";
+      display: block;
+      width: 64px;
+      height: 2px;
+      margin-top: 18px;
+      border-radius: 999px;
+      background: linear-gradient(90deg, rgba(185,127,122,0.84), rgba(185,127,122,0.12));
+    }
+
+    .hero-card,
+    .about-image,
+    .glass-card,
+    .feature-card,
+    .step,
+    .faq-item,
+    .social-profile,
+    .social-post,
+    .testimonial-card,
+    .contact-card {
+      transition: transform 0.34s ease, box-shadow 0.34s ease, border-color 0.34s ease, background 0.34s ease;
+    }
+
+    .feature-card:hover,
+    .step:hover,
+    .faq-item:hover,
+    .social-post:hover,
+    .testimonial-card:hover,
+    .contact-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 24px 54px rgba(103, 73, 69, 0.16);
+      border-color: rgba(185, 127, 122, 0.22);
+    }
+
+    .hero-card:hover,
+    .about-image:hover,
+    .glass-card:hover,
+    .social-profile:hover {
+      box-shadow: 0 26px 58px rgba(103, 73, 69, 0.15);
+      border-color: rgba(185, 127, 122, 0.18);
+    }
+
+    .btn {
+      position: relative;
+      overflow: hidden;
+      transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease, background 0.25s ease;
+    }
+
+    .btn::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(120deg, transparent 0%, rgba(255,255,255,0.08) 42%, transparent 72%);
+      transform: translateX(-120%);
+      transition: transform 0.58s ease;
+    }
+
+    .btn:hover::after {
+      transform: translateX(120%);
+    }
+
+    .btn-primary:hover {
+      box-shadow: 0 18px 38px rgba(155, 103, 99, 0.34);
+    }
+
+    .btn-secondary:hover {
+      border-color: rgba(185, 127, 122, 0.24);
+      box-shadow: 0 14px 26px rgba(103, 73, 69, 0.10);
+    }
+
+    .pill,
+    .social-chip,
+    .eyebrow,
+    .social-post-tag {
+      transition: transform 0.25s ease, border-color 0.25s ease, background 0.25s ease;
+    }
+
+    .pill:hover,
+    .social-chip:hover {
+      transform: translateY(-2px);
+      background: rgba(255,255,255,0.88);
+      border-color: rgba(185, 127, 122, 0.24);
+    }
+
+    .js-ready .reveal-up {
+      opacity: 0;
+      transform: translateY(22px);
+      transition: opacity 0.72s ease, transform 0.72s ease;
+      will-change: opacity, transform;
+    }
+
+    .js-ready .reveal-up.is-visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .js-ready .delay-1 { transition-delay: 0.08s; }
+    .js-ready .delay-2 { transition-delay: 0.16s; }
+    .js-ready .delay-3 { transition-delay: 0.24s; }
+    .js-ready .delay-4 { transition-delay: 0.32s; }
+
+    @media (prefers-reduced-motion: reduce) {
+      .hero::before,
+      .hero::after {
+        animation: none !important;
+      }
+
+      .js-ready .reveal-up,
+      .js-ready .reveal-up.is-visible {
+        opacity: 1 !important;
+        transform: none !important;
+        transition: none !important;
+      }
+    }
+
+
+    /* === QR WhatsApp === */
+    .qr-card {
+      display: grid;
+      grid-template-columns: 132px 1fr;
+      gap: 18px;
+      align-items: center;
+      padding: 18px;
+      border-radius: 24px;
+      border: 1px solid rgba(255, 255, 255, 0.8);
+      background: rgba(255, 255, 255, 0.78);
+      backdrop-filter: blur(12px);
+      box-shadow: var(--shadow);
+      margin-top: 18px;
+    }
+
+    .qr-card img {
+      width: 132px;
+      height: 132px;
+      object-fit: contain;
+      border-radius: 18px;
+      background: #fff;
+      padding: 8px;
+      border: 1px solid var(--line);
+    }
+
+    .qr-copy h3 {
+      margin: 0 0 8px;
+    }
+
+    .qr-copy p {
+      margin: 0 0 12px;
+      color: var(--muted);
+    }
+
+    .qr-note {
+      font-size: 0.9rem;
+      color: var(--muted);
+    }
+
+    @media (max-width: 760px) {
+      .qr-card {
+        grid-template-columns: 1fr;
+        text-align: center;
+      }
+
+      .qr-card img {
+        margin: 0 auto;
+      }
+    }
+
+
+    /* === QR compacto en contacto === */
+    .contact-cta-side {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+    }
+
+    .contact-qr-inline {
+      width: 170px;
+      height: 170px;
+      object-fit: contain;
+      border-radius: 16px;
+      background: #fff;
+      padding: 6px;
+      border: 1px solid var(--line);
+      box-shadow: 0 10px 24px rgba(103, 73, 69, 0.10);
+      flex-shrink: 0;
+    }
+
+    .contact-qr-meta {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+      min-width: 0;
+    }
+
+    .contact-qr-meta small {
+      color: var(--muted);
+      font-size: 0.84rem;
+      line-height: 1.35;
+      max-width: 260px;
+    }
+
+    @media (max-width: 1080px) {
+      .contact-cta-side {
+        justify-content: flex-start;
+      }
+    }
+
+    @media (max-width: 760px) {
+      .contact-cta-side {
+        width: 100%;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 12px;
+      }
+
+      .contact-qr-inline {
+        width: 118px;
+        height: 118px;
+        margin: 0 auto;
+      }
+
+      .contact-qr-meta {
+        text-align: center;
+        align-items: center;
+      }
+
+      .contact-qr-meta small {
+        max-width: 100%;
+      }
+    }
+
+</style>
+
 </head>
 
 <body>
@@ -1148,7 +1786,7 @@
           </div>
         </div>
 
-        <div class="hero-card">
+        <div class="hero-card reveal-up delay-2">
           <div class="portrait">
             <img src="img/IMG_2350.JPG" alt="Profesional de la salud en consultorio" />
           </div>
@@ -1168,11 +1806,11 @@
 
     <section id="sobre">
       <div class="container about-grid">
-        <div class="about-image">
+        <div class="about-image reveal-up">
           <img src="img/IMG_2359.JPG" alt="Doctora en consulta" />
         </div>
 
-        <div class="glass-card">
+        <div class="glass-card reveal-up delay-1">
           <div class="section-kicker">Sobre mí</div>
           <h2>Un enfoque profesional, humano y personalizado para acompañar tu salud hormonal.</h2>
           <p>
@@ -1215,42 +1853,42 @@
         </div>
 
         <div class="features-grid">
-          <article class="feature-card">
+          <article class="feature-card reveal-up delay-1">
             <div class="feature-icon">01</div>
             <h3>Salud hormonal femenina</h3>
             <p>Evaluación y acompañamiento médico para comprender síntomas, estudios y opciones de tratamiento con una
               mirada integral.</p>
           </article>
 
-          <article class="feature-card">
+          <article class="feature-card reveal-up delay-2">
             <div class="feature-icon">02</div>
             <h3>Tiroides</h3>
             <p>Espacio para consulta, seguimiento y orientación en casos vinculados al funcionamiento tiroideo y su
               impacto en el bienestar general.</p>
           </article>
 
-          <article class="feature-card">
+          <article class="feature-card reveal-up delay-3">
             <div class="feature-icon">03</div>
             <h3>Metabolismo y energía</h3>
             <p>Abordaje de síntomas, hábitos y estudios desde una perspectiva clínica que ayude a ordenar el cuadro y
               definir pasos concretos.</p>
           </article>
 
-          <article class="feature-card">
+          <article class="feature-card reveal-up delay-1">
             <div class="feature-icon">04</div>
             <h3>Perimenopausia y menopausia</h3>
             <p>Acompañamiento en una etapa de muchos cambios, con información clara, evaluación médica y seguimiento
               personalizado.</p>
           </article>
 
-          <article class="feature-card">
+          <article class="feature-card reveal-up delay-2">
             <div class="feature-icon">05</div>
             <h3>Fertilidad y eje hormonal</h3>
             <p>Orientación inicial y evaluación clínica para pacientes que buscan comprender mejor su salud hormonal y
               reproductiva.</p>
           </article>
 
-          <article class="feature-card">
+          <article class="feature-card reveal-up delay-3">
             <div class="feature-icon">06</div>
             <h3>Consulta endocrinológica integral</h3>
             <p>Un espacio para abordar distintos motivos de consulta con una mirada profesional, ordenada y adaptada a
@@ -1273,25 +1911,25 @@
         </div>
 
         <div class="steps-grid">
-          <article class="step">
+          <article class="step reveal-up delay-1">
             <div class="step-number">1</div>
             <h3>Escribís por WhatsApp</h3>
             <p>Un primer contacto simple para resolver dudas iniciales y comenzar el proceso de coordinación.</p>
           </article>
 
-          <article class="step">
+          <article class="step reveal-up delay-2">
             <div class="step-number">2</div>
             <h3>Se coordina el turno</h3>
             <p>Se define modalidad, disponibilidad y pasos necesarios para que la consulta quede organizada.</p>
           </article>
 
-          <article class="step">
+          <article class="step reveal-up delay-3">
             <div class="step-number">3</div>
             <h3>Recibís la información</h3>
             <p>Acceso, indicaciones y datos necesarios para que llegues a la consulta con todo claro.</p>
           </article>
 
-          <article class="step">
+          <article class="step reveal-up delay-4">
             <div class="step-number">4</div>
             <h3>Consulta personalizada</h3>
             <p>Un espacio profesional y cercano para abordar tu motivo de consulta con tiempo, criterio y seguimiento.
@@ -1321,7 +1959,7 @@
         </div>
 
         <div class="faq-list">
-          <div class="faq-item">
+          <div class="faq-item reveal-up delay-1">
             <button class="faq-question">
               <span>¿La consulta es online o presencial?</span>
               <span>+</span>
@@ -1332,7 +1970,7 @@
             </div>
           </div>
 
-          <div class="faq-item">
+          <div class="faq-item reveal-up delay-2">
             <button class="faq-question">
               <span>¿Cómo se solicita un turno?</span>
               <span>+</span>
@@ -1343,7 +1981,7 @@
             </div>
           </div>
 
-          <div class="faq-item">
+          <div class="faq-item reveal-up delay-3">
             <button class="faq-question">
               <span>¿Necesito estudios previos?</span>
               <span>+</span>
@@ -1354,7 +1992,7 @@
             </div>
           </div>
 
-          <div class="faq-item">
+          <div class="faq-item reveal-up delay-4">
             <button class="faq-question">
               <span>¿Cómo se realiza el pago?</span>
               <span>+</span>
@@ -1381,7 +2019,7 @@
         </div>
 
         <div class="social-shell">
-          <aside class="social-profile">
+          <aside class="social-profile reveal-up">
             <div class="social-profile-head">
               <div class="social-profile-avatar">
                 <img src="img/Instagram_Profile.jpg" alt="Foto de perfil de la Dra. María Agustina Corbeletto" />
@@ -1425,7 +2063,7 @@
           </aside>
 
           <div class="social-grid">
-            <article class="social-post">
+            <article class="social-post reveal-up delay-1">
               <div class="social-post-cover">
                 <span class="social-post-tag">Reel · 31 Mar 2026</span>
                 <div class="social-post-visual">🦋</div>
@@ -1442,7 +2080,7 @@
               </div>
             </article>
 
-            <article class="social-post">
+            <article class="social-post reveal-up delay-2">
               <div class="social-post-cover">
                 <span class="social-post-tag">Reel · 24 Mar 2026</span>
                 <div class="social-post-visual">✨</div>
@@ -1459,7 +2097,7 @@
               </div>
             </article>
 
-            <article class="social-post">
+            <article class="social-post reveal-up delay-3">
               <div class="social-post-cover">
                 <span class="social-post-tag">Reel · 18 Mar 2026</span>
                 <div class="social-post-visual">💗</div>
@@ -1635,21 +2273,26 @@
             </p>
           </div>
 
-          <div>
-            <a href="#" class="btn btn-primary"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
-                fill="currentColor" class="bi bi-whatsapp" viewBox="0 0 16 16">
-                <path
-                  d="M13.601 2.326A7.85 7.85 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.057 3.965L0 16l4.204-1.102a7.9 7.9 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93A7.9 7.9 0 0 0 13.6 2.326zM7.994 14.521a6.6 6.6 0 0 1-3.356-.92l-.24-.144-2.494.654.666-2.433-.156-.251a6.56 6.56 0 0 1-1.007-3.505c0-3.626 2.957-6.584 6.591-6.584a6.56 6.56 0 0 1 4.66 1.931 6.56 6.56 0 0 1 1.928 4.66c-.004 3.639-2.961 6.592-6.592 6.592m3.615-4.934c-.197-.099-1.17-.578-1.353-.646-.182-.065-.315-.099-.445.099-.133.197-.513.646-.627.775-.114.133-.232.148-.43.05-.197-.1-.836-.308-1.592-.985-.59-.525-.985-1.175-1.103-1.372-.114-.198-.011-.304.088-.403.087-.088.197-.232.296-.346.1-.114.133-.198.198-.33.065-.134.034-.248-.015-.347-.05-.099-.445-1.076-.612-1.47-.16-.389-.323-.335-.445-.34-.114-.007-.247-.007-.38-.007a.73.73 0 0 0-.529.247c-.182.198-.691.677-.691 1.654s.71 1.916.81 2.049c.098.133 1.394 2.132 3.383 2.992.47.205.84.326 1.129.418.475.152.904.129 1.246.08.38-.058 1.171-.48 1.338-.943.164-.464.164-.86.114-.943-.049-.084-.182-.133-.38-.232" />
-              </svg>WhatsApp</a>
-          </div>
-        </div>
-      </div>
-    </section>
+          
+            <div class="contact-cta-side">
+              <img class="contact-qr-inline" src="img/Qr_Whatsapp.png" alt="QR para iniciar consulta por WhatsApp" />
+              <div class="contact-qr-meta">
+                <a href="https://wa.me/5491127800004?text=Hola%20Dra.%20Mar%C3%ADa%20Agustina%2C%20%C2%BFc%C3%B3mo%20est%C3%A1s%3F%20%E2%9C%A8%0ALlegu%C3%A9%20a%20tu%20web%20y%20quer%C3%ADa%20hacerte%20una%20consulta%20para%20coordinar%20un%20turno.%0A%0ATe%20comparto%20mis%20datos%3A%0A%E2%80%A2%20Nombre%3A%20%0A%E2%80%A2%20Edad%3A%20%0A%E2%80%A2%20Motivo%20de%20consulta%3A%20%0A%E2%80%A2%20Modalidad%20preferida%3A%20online%20/%20presencial%20%0A%0AMuchas%20gracias%20%F0%9F%A4%8D" class="btn btn-primary" target="_blank" rel="noopener noreferrer">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-whatsapp" viewBox="0 0 16 16">
+                    <path d="M13.601 2.326A7.85 7.85 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.057 3.965L0 16l4.204-1.102a7.9 7.9 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93A7.9 7.9 0 0 0 13.6 2.326zM7.994 14.521a6.6 6.6 0 0 1-3.356-.92l-.24-.144-2.494.654.666-2.433-.156-.251a6.56 6.56 0 0 1-1.007-3.505c0-3.626 2.957-6.584 6.591-6.584a6.56 6.56 0 0 1 4.66 1.931 6.56 6.56 0 0 1 1.928 4.66c-.004 3.639-2.961 6.592-6.592 6.592m3.615-4.934c-.197-.099-1.17-.578-1.353-.646-.182-.065-.315-.099-.445.099-.133.197-.513.646-.627.775-.114.133-.232.148-.43.05-.197-.1-.836-.308-1.592-.985-.59-.525-.985-1.175-1.103-1.372-.114-.198-.011-.304.088-.403.087-.088.197-.232.296-.346.1-.114.133-.198.198-.33.065-.134.034-.248-.015-.347-.05-.099-.445-1.076-.612-1.47-.16-.389-.323-.335-.445-.34-.114-.007-.247-.007-.38-.007a.73.73 0 0 0-.529.247c-.182.198-.691.677-.691 1.654s.71 1.916.81 2.049c.098.133 1.394 2.132 3.383 2.992.47.205.84.326 1.129.418.475.152.904.129 1.246.08.38-.058 1.171-.48 1.338-.943.164-.464.164-.86.114-.943-.049-.084-.182-.133-.38-.232"/>
+                  </svg>
+                  WhatsApp
+                </a>
+                <small>También podés escanear el QR para abrir el mensaje desde tu celular.</small>
+              </div>
+            </div>
+    </div></div>
+      </section>
   </main>
 
   <footer class="site-footer">
     <div class="container footer-grid">
-      <div class="contact-card">
+      <div class="contact-card reveal-up">
         <div class="brand-mark">Endocrinología</div>
         <h3 style="margin: 8px 0 10px; font-size: 1.5rem;">Dra. Agustina Corbeletto</h3>
         <p style="margin: 0; color: var(--muted); max-width: 560px;">
@@ -1667,7 +2310,7 @@
         <div class="footer-note">Atención online · Consultas personalizadas · Enfoque integral</div>
       </div>
 
-      <div class="contact-card">
+      <div class="contact-card reveal-up">
         <div class="section-kicker">Contacto</div>
         <p style="margin: 0 0 8px; font-weight: 600;">WhatsApp</p>
         <p style="margin: 0 0 16px; color: var(--muted);">Contacto directo para solicitar turno o resolver dudas
@@ -1681,6 +2324,7 @@
   </footer>
 
 
+  
   <script>
     const faqButtons = document.querySelectorAll('.faq-question');
 
@@ -1773,6 +2417,107 @@
     } else {
       counterElements.forEach((el) => animateCounter(el));
     }
+
+
+    const header = document.querySelector('.site-header');
+    const updateHeaderState = () => {
+      if (!header) return;
+      header.classList.toggle('is-scrolled', window.scrollY > 8);
+    };
+    updateHeaderState();
+    window.addEventListener('scroll', updateHeaderState, { passive: true });
+
+    document.body.classList.add('js-ready');
+    const revealElements = document.querySelectorAll('.reveal-up');
+
+    if ('IntersectionObserver' in window) {
+      const revealObserver = new IntersectionObserver((entries, observer) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('is-visible');
+            observer.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.14, rootMargin: '0px 0px -40px 0px' });
+
+      revealElements.forEach((el) => revealObserver.observe(el));
+    } else {
+      revealElements.forEach((el) => el.classList.add('is-visible'));
+    }
+
+    // Carrusel continuo de opiniones por JavaScript
+    window.addEventListener('load', () => {
+      const slider = document.getElementById('testimonialSlider');
+      const track = document.getElementById('testimonialTrack');
+      if (!slider || !track) return;
+
+      const originalCards = Array.from(track.children);
+      if (!originalCards.length) return;
+
+      // duplicar una sola vez
+      if (!track.dataset.duplicated) {
+        originalCards.forEach((card) => {
+          track.appendChild(card.cloneNode(true));
+        });
+        track.dataset.duplicated = 'true';
+      }
+
+      let offset = 0;
+      let paused = false;
+      let rafId = null;
+      let singleSetWidth = 0;
+
+      const getGap = () => {
+        const styles = getComputedStyle(track);
+        return parseFloat(styles.gap || styles.columnGap || 18);
+      };
+
+      const getSpeed = () => {
+        if (window.innerWidth <= 760) return 0.35;
+        if (window.innerWidth <= 920) return 0.45;
+        return 0.55;
+      };
+
+      const measure = () => {
+        const cards = Array.from(track.children);
+        const half = cards.length / 2;
+        const gap = getGap();
+        singleSetWidth = 0;
+
+        for (let i = 0; i < half; i++) {
+          singleSetWidth += cards[i].getBoundingClientRect().width;
+        }
+
+        singleSetWidth += gap * (half - 1);
+      };
+
+      const tick = () => {
+        if (!paused) {
+          offset -= getSpeed();
+          if (Math.abs(offset) >= singleSetWidth) {
+            offset = 0;
+          }
+          track.style.transform = `translate3d(${offset}px, 0, 0)`;
+        }
+        rafId = requestAnimationFrame(tick);
+      };
+
+      const restart = () => {
+        if (rafId) cancelAnimationFrame(rafId);
+        offset = 0;
+        track.style.transform = 'translate3d(0,0,0)';
+        measure();
+        tick();
+      };
+
+      slider.addEventListener('mouseenter', () => { paused = true; });
+      slider.addEventListener('mouseleave', () => { paused = false; });
+      slider.addEventListener('touchstart', () => { paused = true; }, { passive: true });
+      slider.addEventListener('touchend', () => { paused = false; }, { passive: true });
+      window.addEventListener('resize', restart);
+
+      restart();
+    });
   </script>
 
 </body>
