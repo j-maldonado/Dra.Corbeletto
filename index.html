@@ -5,7 +5,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="description"
-    content="Dra. María Agustina Corbeletto. Endocrinología, metabolismo y salud hormonal femenina con atención online." />
+    content="Dra. María Agustina Corbeletto. Endocrinología, metabolismo y salud hormonal femenina con una mirada clínica integral y consultas online." />
   <meta name="keywords"
     content="endocrinología, salud hormonal femenina, metabolismo, tiroides, menopausia, fertilidad, endocrinóloga, CABA, Recoleta, videoconsulta" />
   <meta name="author" content="Dra. María Agustina Corbeletto" />
@@ -16,13 +16,13 @@
   <meta property="og:type" content="website" />
   <meta property="og:title" content="Dra. María Agustina Corbeletto | Endocrinología y salud hormonal femenina" />
   <meta property="og:description"
-    content="Atención online con enfoque integral en salud hormonal femenina, metabolismo, tiroides y menopausia." />
+    content="Una mirada clínica integral para abordar síntomas hormonales, metabolismo, tiroides, SOP, fertilidad y menopausia con criterio médico y basado en evidencia." />
   <meta property="og:site_name" content="Dra. María Agustina Corbeletto" />
   <meta property="og:image" content="/DraCorbeletto/img/IMG_2350.JPG" />
   <meta property="twitter:card" content="summary_large_image" />
   <meta property="twitter:title" content="Dra. María Agustina Corbeletto | Endocrinología y salud hormonal femenina" />
   <meta property="twitter:description"
-    content="Atención online con enfoque integral en salud hormonal femenina, metabolismo, tiroides y menopausia." />
+    content="Una mirada clínica integral para abordar síntomas hormonales, metabolismo, tiroides, SOP, fertilidad y menopausia con criterio médico y basado en evidencia." />
   <meta property="twitter:image" content="/DraCorbeletto/img/IMG_2350.JPG" />
   <!-- Reemplazar estas URLs por el dominio final al publicar -->
   <link rel="canonical" href="https://tusitio.com/" />
@@ -1376,6 +1376,91 @@
       }
     }
 
+
+    /* === FAQ + Footer contact polish === */
+    .faq-layout {
+      align-items: stretch;
+    }
+
+    .faq-side {
+      min-height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .faq-side .btn {
+      width: fit-content;
+    }
+
+    .contact-links {
+      display: grid;
+      gap: 12px;
+      margin-top: 8px;
+    }
+
+    .contact-link {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 12px 14px;
+      border-radius: 18px;
+      background: rgba(255, 255, 255, 0.8);
+      border: 1px solid var(--line);
+      transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease, background 0.25s ease;
+    }
+
+    .contact-link:hover {
+      transform: translateY(-2px);
+      border-color: rgba(185, 127, 122, 0.24);
+      box-shadow: 0 14px 26px rgba(103, 73, 69, 0.10);
+      background: rgba(255,255,255,0.88);
+    }
+
+    .contact-link-icon {
+      width: 38px;
+      height: 38px;
+      min-width: 38px;
+      border-radius: 999px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      background: linear-gradient(135deg, rgba(234, 214, 210, 0.8) 0%, rgba(244, 232, 229, 0.95) 100%);
+      color: var(--primary-dark);
+      border: 1px solid rgba(185, 127, 122, 0.14);
+    }
+
+    .contact-link-icon svg {
+      width: 18px;
+      height: 18px;
+      display: block;
+    }
+
+    .contact-link-copy {
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+      min-width: 0;
+    }
+
+    .contact-link-copy strong {
+      font-size: 0.96rem;
+      line-height: 1.2;
+    }
+
+    .contact-link-copy span {
+      color: var(--muted);
+      font-size: 0.88rem;
+      line-height: 1.35;
+      overflow-wrap: anywhere;
+    }
+
+    @media (max-width: 760px) {
+      .faq-side .btn {
+        width: 100%;
+      }
+    }
+
 </style>
 
   <style id="testimonial-js-marquee-style">
@@ -1739,7 +1824,7 @@
         <span class="brand-mark">🦋 Endocrinología y Metabolismo</span>
         <span class="brand-name">Dra. María Agustina Corbeletto</span>
       </a>
-
+  
       <nav class="nav" id="nav">
         <div class="nav-links">
           <a href="#sobre">Sobre mí</a>
@@ -1763,11 +1848,10 @@
     <section class="hero">
       <div class="container hero-grid">
         <div>
-          <div class="eyebrow">Salud hormonal femenina</div>
-          <h1>Acompañamiento endocrinológico claro, cercano y pensado para cada etapa de tu salud.</h1>
+          <div class="eyebrow">Endocrinología y salud hormonal femenina</div>
+          <h1>Entender el contexto hormonal cambia el enfoque del tratamiento</h1>
           <p>
-            Un espacio de atención profesional para mujeres que buscan comprender mejor su salud hormonal, recibir un
-            enfoque integral y contar con seguimiento médico en un entorno claro, cálido y ordenado.
+            Una mirada clínica integral para abordar tus síntomas con criterio médico y basado en evidencia.
           </p>
 
           <div class="hero-actions">
@@ -1780,25 +1864,25 @@
           </div>
 
           <div class="hero-points">
-            <span class="pill">Atención online</span>
-            <span class="pill">Abordaje integral</span>
-            <span class="pill">Consultas personalizadas</span>
+            <span class="pill">Atención personalizada</span>
+            <span class="pill">Enfoque integral</span>
+            <span class="pill">Consultas online</span>
           </div>
         </div>
 
         <div class="hero-card reveal-up delay-2">
           <div class="portrait">
-            <img src="img/IMG_2350.JPG" alt="Profesional de la salud en consultorio" />
+            <img src="img/IMG2.png" alt="Profesional de la salud en consultorio" />
           </div>
 
           <div class="floating-card top">
-            <strong>Consulta integral</strong>
-            <small>Tiempo, escucha y seguimiento</small>
+            <strong>Atención personalizada</strong>
+            <small>Criterio médico y plan concreto</small>
           </div>
 
           <div class="floating-card bottom">
-            <strong>Consulta Online</strong>
-            <small>Coordinación simple y atención personalizada</small>
+            <strong>Consultas online</strong>
+            <small>Videollamada por Google Meet o WhatsApp</small>
           </div>
         </div>
       </div>
@@ -1807,37 +1891,35 @@
     <section id="sobre">
       <div class="container about-grid">
         <div class="about-image reveal-up">
-          <img src="img/IMG_2359.JPG" alt="Doctora en consulta" />
+          <img src="img/IMG1.png" alt="Doctora en consulta" />
         </div>
 
         <div class="glass-card reveal-up delay-1">
           <div class="section-kicker">Sobre mí</div>
-          <h2>Un enfoque profesional, humano y personalizado para acompañar tu salud hormonal.</h2>
+          <h2>Una mirada clínica integral para entender lo que te pasa más allá de un resultado de laboratorio.</h2>
           <p>
-            La propuesta de atención está pensada para mujeres que quieren entender lo que les pasa, ordenar sus
-            síntomas y recibir una evaluación endocrinológica con mirada integral. El objetivo no es solo indicar
-            estudios o tratamiento, sino acompañar cada proceso con claridad y criterio clínico.
+            Soy médica endocrinóloga, enfocada en salud hormonal femenina. Acompaño a mujeres que buscan entender qué les está pasando con su cuerpo, más allá de un resultado de laboratorio.
           </p>
           <p>
-            Esta sección puede resumir su enfoque, su forma de trabajo y el tipo de experiencia que quiere transmitir:
-            profesionalismo, cercanía, escucha y un seguimiento acorde a cada caso.
+            Trabajo desde un enfoque clínico integral, incorporando una mirada que integra el eje hormonal con el contexto metabólico, el estilo de vida y los factores psicoemocionales que pueden influir en la salud. Evalúo no solo los valores hormonales, sino también los síntomas, la historia clínica y el contexto de cada paciente para poder tomar decisiones basadas en evidencia, adaptadas a cada caso en particular. Creo en una medicina clara, sin extremos, donde el foco no es solo el diagnóstico, sino priorizar tu calidad de vida.
           </p>
 
           <div class="metric-row">
             <div class="metric">
-              <strong>Atención cercana</strong>
-              <span>Espacio de escucha y acompañamiento</span>
+              <strong>Sin soluciones estándar</strong>
+              <span>Cada tratamiento se define en función del contexto hormonal, metabólico y clínico individual.</span>
             </div>
             <div class="metric">
-              <strong>Mirada integral</strong>
-              <span>Evaluación clínica personalizada</span>
+              <strong>Basado en evidencia</strong>
+              <span>Decisiones adaptadas a cada caso particular.</span>
             </div>
             <div class="metric">
-              <strong>Seguimiento claro</strong>
-              <span>Proceso ordenado y profesional</span>
+              <strong>Qué podés esperar</strong>
+              <span>Un espacio donde puedas plantear lo que te pasa, entenderlo con claridad y llevarte un plan concreto.</span>
             </div>
           </div>
         </div>
+         
       </div>
     </section>
 
@@ -1845,10 +1927,9 @@
       <div class="container">
         <div class="section-head">
           <div class="section-kicker">Áreas de atención</div>
-          <h2>Áreas de atención orientadas a la salud hormonal femenina y al bienestar integral.</h2>
+          <h2>Áreas de atención enfocadas en endocrinología, metabolismo y salud hormonal femenina.</h2>
           <p>
-            Esta sección puede destacar de forma simple los temas que más se desean comunicar: consulta endocrinológica,
-            metabolismo, salud hormonal y acompañamiento en distintas etapas de la vida de la mujer.
+            Un abordaje clínico integral para evaluar síntomas, contexto metabólico y eje hormonal en distintas etapas de la vida.
           </p>
         </div>
 
@@ -1856,43 +1937,37 @@
           <article class="feature-card reveal-up delay-1">
             <div class="feature-icon">01</div>
             <h3>Salud hormonal femenina</h3>
-            <p>Evaluación y acompañamiento médico para comprender síntomas, estudios y opciones de tratamiento con una
-              mirada integral.</p>
+            <p>Evaluación integral de síntomas hormonales en las distintas etapas de la vida.</p>
           </article>
 
           <article class="feature-card reveal-up delay-2">
             <div class="feature-icon">02</div>
             <h3>Tiroides</h3>
-            <p>Espacio para consulta, seguimiento y orientación en casos vinculados al funcionamiento tiroideo y su
-              impacto en el bienestar general.</p>
+            <p>Hipotiroidismo, hipertiroidismo, nódulos tiroideos y patología autoinmune.</p>
           </article>
 
           <article class="feature-card reveal-up delay-3">
             <div class="feature-icon">03</div>
-            <h3>Metabolismo y energía</h3>
-            <p>Abordaje de síntomas, hábitos y estudios desde una perspectiva clínica que ayude a ordenar el cuadro y
-              definir pasos concretos.</p>
+            <h3>Metabolismo</h3>
+            <p>Abordaje del metabolismo desde una mirada clínica e integral: resistencia a la insulina, metabolismo fosfocálcico y hábitos.</p>
           </article>
 
           <article class="feature-card reveal-up delay-1">
             <div class="feature-icon">04</div>
-            <h3>Perimenopausia y menopausia</h3>
-            <p>Acompañamiento en una etapa de muchos cambios, con información clara, evaluación médica y seguimiento
-              personalizado.</p>
+            <h3>Síndrome de Ovario Poliquístico (SOP)</h3>
+            <p>Evaluación y tratamiento integral del eje hormonal y metabólico.</p>
           </article>
 
           <article class="feature-card reveal-up delay-2">
             <div class="feature-icon">05</div>
-            <h3>Fertilidad y eje hormonal</h3>
-            <p>Orientación inicial y evaluación clínica para pacientes que buscan comprender mejor su salud hormonal y
-              reproductiva.</p>
+            <h3>Perimenopausia y menopausia</h3>
+            <p>Evaluación de síntomas, opciones terapéuticas y abordaje del climaterio.</p>
           </article>
 
           <article class="feature-card reveal-up delay-3">
             <div class="feature-icon">06</div>
-            <h3>Consulta endocrinológica integral</h3>
-            <p>Un espacio para abordar distintos motivos de consulta con una mirada profesional, ordenada y adaptada a
-              cada paciente.</p>
+            <h3>Fertilidad y eje hormonal</h3>
+            <p>Estudio hormonal en búsqueda de embarazo y alteraciones del ciclo.</p>
           </article>
         </div>
       </div>
@@ -1902,38 +1977,35 @@
       <div class="container">
         <div class="section-head">
           <div class="section-kicker">Cómo funciona</div>
-          <h2>Una experiencia de consulta simple, clara y pensada para que todo sea más fácil desde el primer contacto.
-          </h2>
+          <h2>Un proceso simple, claro y ordenado para que llegues a la consulta con toda la información necesaria.</h2>
           <p>
-            La idea es que la paciente entienda rápidamente cómo iniciar su consulta, qué esperar y cuál es el recorrido
-            desde el primer mensaje hasta el encuentro médico.
+            Contacto inicial por WhatsApp, coordinación personalizada del turno, reserva con pago previo por transferencia, completar formulario médico, envío de estudios por mail (opcional) y acceso a videollamada el día del turno.
           </p>
         </div>
 
         <div class="steps-grid">
           <article class="step reveal-up delay-1">
             <div class="step-number">1</div>
-            <h3>Escribís por WhatsApp</h3>
-            <p>Un primer contacto simple para resolver dudas iniciales y comenzar el proceso de coordinación.</p>
+            <h3>Contacto inicial por WhatsApp</h3>
+            <p>El primer contacto se realiza por WhatsApp para iniciar la coordinación del turno.</p>
           </article>
 
           <article class="step reveal-up delay-2">
             <div class="step-number">2</div>
-            <h3>Se coordina el turno</h3>
-            <p>Se define modalidad, disponibilidad y pasos necesarios para que la consulta quede organizada.</p>
+            <h3>Coordinación personalizada del turno</h3>
+            <p>Los turnos se coordinan de manera personalizada según disponibilidad y necesidad.</p>
           </article>
 
           <article class="step reveal-up delay-3">
             <div class="step-number">3</div>
-            <h3>Recibís la información</h3>
-            <p>Acceso, indicaciones y datos necesarios para que llegues a la consulta con todo claro.</p>
+            <h3>Reserva y preparación previa</h3>
+            <p>Reserva con pago previo por transferencia, formulario médico y envío opcional de estudios por mail.</p>
           </article>
 
           <article class="step reveal-up delay-4">
             <div class="step-number">4</div>
-            <h3>Consulta personalizada</h3>
-            <p>Un espacio profesional y cercano para abordar tu motivo de consulta con tiempo, criterio y seguimiento.
-            </p>
+            <h3>Videollamada el día del turno</h3>
+            <p>La consulta se realiza por videollamada, a través de Google Meet o WhatsApp.</p>
           </article>
         </div>
       </div>
@@ -1948,10 +2020,9 @@
             Preguntas frecuentes para que el primer paso sea más simple.
           </h2>
           <p>
-            Estas respuestas son de ejemplo y después se pueden ajustar con la información real de la doctora. La idea
-            es reducir dudas repetidas y ordenar mejor el contacto inicial.
+            Acá vas a encontrar respuestas claras a las dudas más frecuentes antes de coordinar una consulta.
           </p>
-          <a href="#" class="btn btn-primary"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+          <a href="https://wa.me/5491127800004?text=Hola%20Dra.%20Mar%C3%ADa%20Agustina%2C%20%C2%BFc%C3%B3mo%20est%C3%A1s%3F%20%E2%9C%A8%0ALlegu%C3%A9%20a%20tu%20web%20y%20quer%C3%ADa%20hacerte%20una%20consulta%20para%20coordinar%20un%20turno.%0A%0ATe%20comparto%20mis%20datos%3A%0A%E2%80%A2%20Nombre%3A%20%0A%E2%80%A2%20Edad%3A%20%0A%E2%80%A2%20Motivo%20de%20consulta%3A%20%0A%0AMuchas%20gracias%20%F0%9F%A4%8D" target="_blank" rel="noopener noreferrer" class="btn btn-primary"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
               fill="currentColor" class="bi bi-whatsapp" viewBox="0 0 16 16">
               <path
                 d="M13.601 2.326A7.85 7.85 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.057 3.965L0 16l4.204-1.102a7.9 7.9 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93A7.9 7.9 0 0 0 13.6 2.326zM7.994 14.521a6.6 6.6 0 0 1-3.356-.92l-.24-.144-2.494.654.666-2.433-.156-.251a6.56 6.56 0 0 1-1.007-3.505c0-3.626 2.957-6.584 6.591-6.584a6.56 6.56 0 0 1 4.66 1.931 6.56 6.56 0 0 1 1.928 4.66c-.004 3.639-2.961 6.592-6.592 6.592m3.615-4.934c-.197-.099-1.17-.578-1.353-.646-.182-.065-.315-.099-.445.099-.133.197-.513.646-.627.775-.114.133-.232.148-.43.05-.197-.1-.836-.308-1.592-.985-.59-.525-.985-1.175-1.103-1.372-.114-.198-.011-.304.088-.403.087-.088.197-.232.296-.346.1-.114.133-.198.198-.33.065-.134.034-.248-.015-.347-.05-.099-.445-1.076-.612-1.47-.16-.389-.323-.335-.445-.34-.114-.007-.247-.007-.38-.007a.73.73 0 0 0-.529.247c-.182.198-.691.677-.691 1.654s.71 1.916.81 2.049c.098.133 1.394 2.132 3.383 2.992.47.205.84.326 1.129.418.475.152.904.129 1.246.08.38-.058 1.171-.48 1.338-.943.164-.464.164-.86.114-.943-.049-.084-.182-.133-.38-.232" />
@@ -1965,8 +2036,7 @@
               <span>+</span>
             </button>
             <div class="faq-answer">
-              <p>La landing puede mostrar ambas modalidades y aclarar en qué casos se ofrece cada una, junto con la
-                ubicación o la plataforma utilizada.</p>
+              <p>La consulta es online.</p>
             </div>
           </div>
 
@@ -1976,8 +2046,7 @@
               <span>+</span>
             </button>
             <div class="faq-answer">
-              <p>La idea es que el primer contacto sea por WhatsApp, con un mensaje simple que permita ordenar
-                rápidamente la consulta y la disponibilidad.</p>
+              <p>A través de WhatsApp. Los turnos se coordinan de manera personalizada.</p>
             </div>
           </div>
 
@@ -1987,8 +2056,7 @@
               <span>+</span>
             </button>
             <div class="faq-answer">
-              <p>Esto puede aclararse con un texto breve: en algunos casos se solicitarán estudios según el motivo de
-                consulta, y en otros se evaluará durante la primera entrevista.</p>
+              <p>No es obligatorio. Si tenés estudios, podés enviarlos antes de la consulta.</p>
             </div>
           </div>
 
@@ -1998,8 +2066,37 @@
               <span>+</span>
             </button>
             <div class="faq-answer">
-              <p>La respuesta final puede ajustarse al método real de pago y a la dinámica de confirmación que quiera
-                usar la doctora para ordenar mejor su agenda.</p>
+              <p>Por transferencia bancaria previa al turno.</p>
+            </div>
+          </div>
+
+          <div class="faq-item reveal-up delay-1">
+            <button class="faq-question">
+              <span>¿Trabajás con obras sociales?</span>
+              <span>+</span>
+            </button>
+            <div class="faq-answer">
+              <p>La atención es de forma particular.</p>
+            </div>
+          </div>
+
+          <div class="faq-item reveal-up delay-2">
+            <button class="faq-question">
+              <span>¿Cuánto dura la consulta?</span>
+              <span>+</span>
+            </button>
+            <div class="faq-answer">
+              <p>Aproximadamente 20 a 30 minutos.</p>
+            </div>
+          </div>
+
+          <div class="faq-item reveal-up delay-4">
+            <button class="faq-question">
+              <span>¿Atendés solo mujeres?</span>
+              <span>+</span>
+            </button>
+            <div class="faq-answer">
+              <p>Principalmente mujeres, aunque también atiendo patología endocrinológica general.</p>
             </div>
           </div>
         </div>
@@ -2030,8 +2127,7 @@
               </div>
             </div>
             <p>
-              Endocrinología, metabolismo y salud hormonal femenina con foco en educación clara, contenido útil y una
-              comunicación cercana orientada especialmente al público femenino.
+              Endocrinología, metabolismo y salud hormonal femenina con una comunicación clara, cercana y basada en evidencia, orientada especialmente al público femenino.
             </p>
 
             <div class="social-actions">
@@ -2277,7 +2373,7 @@
             <div class="contact-cta-side">
               <img class="contact-qr-inline" src="img/Qr_Whatsapp.png" alt="QR para iniciar consulta por WhatsApp" />
               <div class="contact-qr-meta">
-                <a href="https://wa.me/5491127800004?text=Hola%20Dra.%20Mar%C3%ADa%20Agustina%2C%20%C2%BFc%C3%B3mo%20est%C3%A1s%3F%20%E2%9C%A8%0ALlegu%C3%A9%20a%20tu%20web%20y%20quer%C3%ADa%20hacerte%20una%20consulta%20para%20coordinar%20un%20turno.%0A%0ATe%20comparto%20mis%20datos%3A%0A%E2%80%A2%20Nombre%3A%20%0A%E2%80%A2%20Edad%3A%20%0A%E2%80%A2%20Motivo%20de%20consulta%3A%20%0A%E2%80%A2%20Modalidad%20preferida%3A%20online%20/%20presencial%20%0A%0AMuchas%20gracias%20%F0%9F%A4%8D" class="btn btn-primary" target="_blank" rel="noopener noreferrer">
+                <a href="https://wa.me/5491127800004?text=Hola%20Dra.%20Mar%C3%ADa%20Agustina%2C%20%C2%BFc%C3%B3mo%20est%C3%A1s%3F%20%E2%9C%A8%0ALlegu%C3%A9%20a%20tu%20web%20y%20quer%C3%ADa%20hacerte%20una%20consulta%20para%20coordinar%20un%20turno.%0A%0ATe%20comparto%20mis%20datos%3A%0A%E2%80%A2%20Nombre%3A%20%0A%E2%80%A2%20Edad%3A%20%0A%E2%80%A2%20Motivo%20de%20consulta%3A%20%0A%0AMuchas%20gracias%20%F0%9F%A4%8D" class="btn btn-primary" target="_blank" rel="noopener noreferrer">
                   <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-whatsapp" viewBox="0 0 16 16">
                     <path d="M13.601 2.326A7.85 7.85 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.057 3.965L0 16l4.204-1.102a7.9 7.9 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93A7.9 7.9 0 0 0 13.6 2.326zM7.994 14.521a6.6 6.6 0 0 1-3.356-.92l-.24-.144-2.494.654.666-2.433-.156-.251a6.56 6.56 0 0 1-1.007-3.505c0-3.626 2.957-6.584 6.591-6.584a6.56 6.56 0 0 1 4.66 1.931 6.56 6.56 0 0 1 1.928 4.66c-.004 3.639-2.961 6.592-6.592 6.592m3.615-4.934c-.197-.099-1.17-.578-1.353-.646-.182-.065-.315-.099-.445.099-.133.197-.513.646-.627.775-.114.133-.232.148-.43.05-.197-.1-.836-.308-1.592-.985-.59-.525-.985-1.175-1.103-1.372-.114-.198-.011-.304.088-.403.087-.088.197-.232.296-.346.1-.114.133-.198.198-.33.065-.134.034-.248-.015-.347-.05-.099-.445-1.076-.612-1.47-.16-.389-.323-.335-.445-.34-.114-.007-.247-.007-.38-.007a.73.73 0 0 0-.529.247c-.182.198-.691.677-.691 1.654s.71 1.916.81 2.049c.098.133 1.394 2.132 3.383 2.992.47.205.84.326 1.129.418.475.152.904.129 1.246.08.38-.058 1.171-.48 1.338-.943.164-.464.164-.86.114-.943-.049-.084-.182-.133-.38-.232"/>
                   </svg>
@@ -2310,15 +2406,46 @@
         <div class="footer-note">Atención online · Consultas personalizadas · Enfoque integral</div>
       </div>
 
+      
       <div class="contact-card reveal-up">
         <div class="section-kicker">Contacto</div>
-        <p style="margin: 0 0 8px; font-weight: 600;">WhatsApp</p>
-        <p style="margin: 0 0 16px; color: var(--muted);">Contacto directo para solicitar turno o resolver dudas
-          iniciales</p>
-        <p style="margin: 0 0 8px; font-weight: 600;">Instagram</p>
-        <p style="margin: 0 0 16px; color: var(--muted);">@dra.corbeletto</p>
-        <p style="margin: 0 0 8px; font-weight: 600;">Atención</p>
-        <p style="margin: 0; color: var(--muted);">Online · Información final a confirmar con la doctora</p>
+        <div class="contact-links">
+          <a class="contact-link" href="https://wa.me/5491127800004?text=Hola%20Dra.%20Mar%C3%ADa%20Agustina%2C%20%C2%BFc%C3%B3mo%20est%C3%A1s%3F%20%E2%9C%A8%0ALlegu%C3%A9%20a%20tu%20web%20y%20quer%C3%ADa%20hacerte%20una%20consulta%20para%20coordinar%20un%20turno.%0A%0ATe%20comparto%20mis%20datos%3A%0A%E2%80%A2%20Nombre%3A%20%0A%E2%80%A2%20Edad%3A%20%0A%E2%80%A2%20Motivo%20de%20consulta%3A%20%0A%0AMuchas%20gracias%20%F0%9F%A4%8D" target="_blank" rel="noopener noreferrer" aria-label="Escribir por WhatsApp">
+            <span class="contact-link-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true">
+                <path d="M13.601 2.326A7.85 7.85 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.057 3.965L0 16l4.204-1.102a7.9 7.9 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93A7.9 7.9 0 0 0 13.6 2.326zM7.994 14.521a6.6 6.6 0 0 1-3.356-.92l-.24-.144-2.494.654.666-2.433-.156-.251a6.56 6.56 0 0 1-1.007-3.505c0-3.626 2.957-6.584 6.591-6.584a6.56 6.56 0 0 1 4.66 1.931 6.56 6.56 0 0 1 1.928 4.66c-.004 3.639-2.961 6.592-6.592 6.592m3.615-4.934c-.197-.099-1.17-.578-1.353-.646-.182-.065-.315-.099-.445.099-.133.197-.513.646-.627.775-.114.133-.232.148-.43.05-.197-.1-.836-.308-1.592-.985-.59-.525-.985-1.175-1.103-1.372-.114-.198-.011-.304.088-.403.087-.088.197-.232.296-.346.1-.114.133-.198.198-.33.065-.134.034-.248-.015-.347-.05-.099-.445-1.076-.612-1.47-.16-.389-.323-.335-.445-.34-.114-.007-.247-.007-.38-.007a.73.73 0 0 0-.529.247c-.182.198-.691.677-.691 1.654s.71 1.916.81 2.049c.098.133 1.394 2.132 3.383 2.992.47.205.84.326 1.129.418.475.152.904.129 1.246.08.38-.058 1.171-.48 1.338-.943.164-.464.164-.86.114-.943-.049-.084-.182-.133-.38-.232"/>
+              </svg>
+            </span>
+            <span class="contact-link-copy">
+              <strong>WhatsApp</strong>
+              <span>Escribime para coordinar tu consulta</span>
+            </span>
+          </a>
+
+          <a class="contact-link" href="mailto:dra.macorbeletto@gmail.com" aria-label="Enviar correo a dra.macorbeletto@gmail.com">
+            <span class="contact-link-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true">
+                <path d="M0 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v.217L8 8.917.001 4.217V4zm0 1.383v6.55l5.803-3.558L0 5.383zM6.761 8.83l-6.57 4.027A2 2 0 0 0 2 14h12a2 2 0 0 0 1.808-1.143L9.239 8.83 8 9.586 6.761 8.83zm3.436-.455L16 11.933v-6.55l-5.803 2.992z"/>
+              </svg>
+            </span>
+            <span class="contact-link-copy">
+              <strong>Gmail</strong>
+              <span>dra.macorbeletto@gmail.com</span>
+            </span>
+          </a>
+
+          <a class="contact-link" href="https://www.instagram.com/dra.corbeletto/" target="_blank" rel="noopener noreferrer" aria-label="Abrir Instagram de la doctora">
+            <span class="contact-link-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true">
+                <path d="M8 0C5.826 0 5.555.01 4.703.048c-.85.038-1.43.173-1.94.372a3.9 3.9 0 0 0-1.41.92A3.9 3.9 0 0 0 .433 2.75c-.2.51-.334 1.09-.372 1.94C.01 5.555 0 5.826 0 8c0 2.174.01 2.445.048 3.297.038.85.173 1.43.372 1.94.2.513.466.949.92 1.403.454.454.89.72 1.403.92.51.199 1.09.334 1.94.372C5.555 15.99 5.826 16 8 16c2.174 0 2.445-.01 3.297-.048.85-.038 1.43-.173 1.94-.372a3.9 3.9 0 0 0 1.403-.92c.454-.454.72-.89.92-1.403.199-.51.334-1.09.372-1.94.038-.852.048-1.123.048-3.297 0-2.174-.01-2.445-.048-3.297-.038-.85-.173-1.43-.372-1.94a3.9 3.9 0 0 0-.92-1.403A3.9 3.9 0 0 0 13.25.433c-.51-.2-1.09-.334-1.94-.372C10.445.01 10.174 0 8 0zm0 1.441c2.137 0 2.39.008 3.232.046.778.035 1.2.165 1.48.274.37.144.633.316.91.593.277.277.449.54.593.91.109.28.239.702.274 1.48.038.842.046 1.095.046 3.232s-.008 2.39-.046 3.232c-.035.778-.165 1.2-.274 1.48a2.46 2.46 0 0 1-.593.91 2.46 2.46 0 0 1-.91.593c-.28.109-.702.239-1.48.274-.842.038-1.095.046-3.232.046s-2.39-.008-3.232-.046c-.778-.035-1.2-.165-1.48-.274a2.46 2.46 0 0 1-.91-.593 2.46 2.46 0 0 1-.593-.91c-.109-.28-.239-.702-.274-1.48C1.45 10.39 1.441 10.137 1.441 8s.008-2.39.046-3.232c.035-.778.165-1.2.274-1.48.144-.37.316-.633.593-.91.277-.277.54-.449.91-.593.28-.109.702-.239 1.48-.274C5.61 1.45 5.863 1.441 8 1.441zm0 2.454A4.105 4.105 0 1 0 8 12.105 4.105 4.105 0 0 0 8 3.895zm0 6.769A2.664 2.664 0 1 1 8 5.336a2.664 2.664 0 0 1 0 5.328zm5.23-7.093a.96.96 0 1 1-1.92 0 .96.96 0 0 1 1.92 0z"/>
+              </svg>
+            </span>
+            <span class="contact-link-copy">
+              <strong>Instagram</strong>
+              <span>@dra.corbeletto</span>
+            </span>
+          </a>
+        </div>
       </div>
     </div>
   </footer>
