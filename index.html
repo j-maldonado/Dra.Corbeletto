@@ -1625,6 +1625,39 @@
         overflow-wrap: anywhere;
       }
 
+
+      .footer-affiliation {
+        margin-top: 18px;
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        padding-top: 14px;
+        border-top: 1px solid rgba(146, 108, 104, 0.12);
+      }
+
+      .footer-affiliation img {
+        width: 72px;
+        height: auto;
+        object-fit: contain;
+        flex-shrink: 0;
+      }
+
+      .footer-affiliation span {
+        font-size: 0.88rem;
+        line-height: 1.4;
+        color: var(--muted);
+      }
+
+      @media (max-width: 760px) {
+        .footer-affiliation {
+          align-items: flex-start;
+        }
+
+        .footer-affiliation img {
+          width: 64px;
+        }
+      }
+
       @media (max-width: 760px) {
         .faq-side .btn {
           width: 100%;
@@ -2871,7 +2904,7 @@
                 </div>
                 <div class="social-stat">
                   <strong
-                    data-count="8000"
+                    data-count="8500"
                     data-format="compact"
                     data-suffix="+"
                     >0</strong
@@ -3230,9 +3263,7 @@
             Dra. Agustina Corbeletto
           </h3>
           <p style="margin: 0; color: var(--muted); max-width: 560px">
-            Endocrinología y salud hormonal femenina con una propuesta de
-            atención moderna, clara y enfocada en acompañar a cada paciente de
-            manera personalizada.
+            Médica (UBA) · Especialista en Endocrinología (Hospital Pirovano – UBA) · Subespecialista en Endocrinología Ginecológica y Reproductiva (SAEGRE) · Formación en Psiconeuroinmunoendocrinología (SAEGRE)
           </p>
           <div class="footer-links">
             <a href="#sobre">Sobre mí</a>
@@ -3327,7 +3358,20 @@
             </a>
           </div>
         </div>
-        <div class="footer-meta">
+        
+            <div class="footer-affiliation">
+              <img
+                loading="lazy"
+                decoding="async"
+                src="img/saem-logo.png"
+                alt="Logo de SAEM"
+              />
+              <span>
+                Miembro de la Sociedad Argentina de Endocrinología y Metabolismo (SAEM)
+              </span>
+            </div>
+
+            <div class="footer-meta">
           <p class="footer-legal">
             © 2026 Dra. María Agustina Corbeletto · Endocrinología y salud
             hormonal femenina
