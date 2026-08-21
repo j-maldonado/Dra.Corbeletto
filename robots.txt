@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://dracorbeletto.com.ar/sitemap.xml

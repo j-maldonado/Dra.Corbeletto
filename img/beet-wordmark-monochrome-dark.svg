@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 340 80" role="img" aria-labelledby="title desc" shape-rendering="geometricPrecision">
+  <title id="title">BEET wordmark — monochrome dark</title>
+  <desc id="desc">Single-color BEET wordmark in off-black, for light backgrounds and one-color production.</desc>
+  <g fill="#0D0D0F">
+    <path fill-rule="evenodd" d="M0 0h46c18 0 29 8 29 22 0 9-5 15-14 19 11 4 18 11 18 22 0 11-9 17-26 17H0V0Zm18 15v17h27c8 0 12-3 12-8.5S53 15 45 15H18Zm0 33v17h31c8 0 12-3 12-8.5S57 48 49 48H18Z"/>
+    <path d="M92 0h72v16h-54v15h44v16h-44v17h54v16H92V0Z"/>
+    <path d="M177 0h72v16h-54v48h54v16h-72V0Z"/>
+    <rect x="207" y="32" width="36" height="15" rx="1.5"/>
+    <path d="M262 0h78v16h-30v64h-18V16h-30V0Z"/>
+  </g>
+</svg>
